@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react'
 import cartasJSON from './datosCartas.json'
 import constantes from './constantesResultado.js'
-import confetti from 'canvas-confetti'
 import Grid from '@mui/material/Grid';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
@@ -215,7 +214,6 @@ const App = () => {
         puntuacion(cada, index);
       })
       setPuntosTotalesState(puntosTotales)
-      confetti();
       setAcabado(true);
       setClaseGanar(estadoActualGanar);
     }
