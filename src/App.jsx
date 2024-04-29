@@ -265,8 +265,9 @@ const App = () => {
 
   //Constantes de los estilos de los Typography
   const sxFotito = {
+    width:{xs: '90%'},
     fontSize: { xs: '1.8rem', sm: '2.5rem', md: '2.7rem', lg: '2.9rem' },
-    fontFamily: 'Times New Roman',
+    fontFamily: 'Times New Roman, serif', 
     fontStyle: 'italic',
     fontWeight: 'bold',
     marginTop: { xs: '5vh', sm: '-10vh', md: '-2vh', lg: '-20vh' },
@@ -275,7 +276,7 @@ const App = () => {
 
   const sxFotito2 = {
     fontSize: { xs: '1.6rem', sm: '1.8rem', md: '2.5rem', lg: '2.9rem' },
-    fontFamily: 'Times New Roman',
+    fontFamily: 'Times New Roman, serif',
     fontStyle: 'italic',
     fontWeight: 'bold',
     marginTop: { xs: '12vh', sm: '10vh', md: '15vh', lg: '-20vh' },
@@ -306,7 +307,7 @@ const App = () => {
           return { flexDirection: "row" };
 
         case "zoom":
-          return { width: "180vw", height: "25vh" }
+          return { width: "220vw", height: "31vh", flexGrow:'2'}
 
         case "card":
           return { width: "10px" }
@@ -336,7 +337,7 @@ const App = () => {
           <Typography variant="body1" sx={sxFotito}>
             Haz click de nuevo en una carta revelada para verla en formato grande
           </Typography></div>
-        <div className="fotito2"><Typography variant="body1" sx={sxFotito2}>
+        <div className="fotito2" style={{flexGrow:'1'}}><Typography variant="body1" sx={sxFotito2}>
           {resultado()}
         </Typography></div>
       </Grid>
