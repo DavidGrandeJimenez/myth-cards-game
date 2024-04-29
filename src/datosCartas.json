@@ -1,0 +1,321 @@
+[
+{
+    "id":0,
+    "puntos": 2,
+    "titulo":"Olimpo",
+    "categoria":"griego",
+    "tipo":"lugar",
+    "condicion1":"trasera",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":1
+},
+{
+    "id":1,
+    "puntos": 3,
+    "titulo":"Lira nórdica",
+    "categoria":"nordico",
+    "tipo":"objeto",
+    "condicion1":"enJuego",
+    "condicion2":"nordico",
+    "condicion3":5,
+    "condicion4":">=",
+    "img":2
+},
+{
+    
+    "id":2,
+    "puntos": 2,
+    "titulo":"Rayos",
+    "categoria":"griego",
+    "tipo":"objeto",
+    "condicion1":"flanco",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":3
+},
+{
+   
+    "id":3,
+    "puntos": 4,
+    "titulo":"Geb y Nut",
+    "categoria":"egipcio",
+    "tipo":"dios",
+    "condicion1":"enJuego",
+    "condicion2":"lugar",
+    "condicion3":2,
+    "condicion4":"<=",
+    "img":4
+},
+{
+   
+    "id":4,
+    "puntos": 1,
+    "titulo":"Jardín cuco",
+    "categoria":"griego",
+    "tipo":"lugar",
+    "condicion1":"nada",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":5
+},
+{
+   
+    "id":5,
+    "puntos": 3,
+    "titulo":"Caja de Pandora",
+    "categoria":"griego",
+    "tipo":"objeto",
+    "condicion1":"unicoFila",
+    "condicion2":"griego",
+    "condicion3":"",
+    "condicion4":"",
+    "img":6
+},
+{
+    
+    "id":6,
+    "puntos": 2,
+    "titulo":"Nilo",
+    "categoria":"egipcio",
+    "tipo":"lugar",
+    "condicion1":"lado",
+    "condicion2":"griego",
+    "condicion3":"",
+    "condicion4":"",
+    "img":7
+},
+{
+    
+    "id":7,
+    "puntos": 2,
+    "titulo":"Vaso canopo",
+    "categoria":"egipcio",
+    "tipo":"objeto",
+    "condicion1":"central",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":8
+},
+{
+   
+    "id":8,
+    "puntos": 2,
+    "titulo":"Osiris",
+    "categoria":"egipcio",
+    "tipo":"dios",
+    "condicion1":"lado",
+    "condicion2":"egipcio",
+    "condicion3":"",
+    "condicion4":"",
+    "img":9
+},
+{
+   
+    "id":9,
+    "puntos": 3,
+    "titulo":"Nariz",
+    "categoria":"egipcio",
+    "tipo":"dios",
+    "condicion1":"unicoFila",
+    "condicion2":"egipcio",
+    "condicion3":"",
+    "condicion4":"",
+    "img":10
+},
+{
+    
+    "id":10,
+    "puntos": 2,
+    "titulo":"Cabra de sacrificio",
+    "categoria":"nordico",
+    "tipo":"objeto",
+    "condicion1":"trasera",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":11
+},
+{
+    
+    "id":11,
+    "puntos": 2,
+    "titulo":"Odín",
+    "categoria":"nordico",
+    "tipo":"dios",
+    "condicion1":"lado",
+    "condicion2":"nordico",
+    "condicion3":"",
+    "condicion4":"",
+    "img":12
+},
+{
+   
+    "id":12,
+    "puntos": 2,
+    "titulo":"Mano de Tyr",
+    "categoria":"nordico",
+    "tipo":"objeto",
+    "condicion1":"flanco",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":13
+},
+{
+    
+    "id":13,
+    "puntos": 2,
+    "titulo":"Hidromiel",
+    "categoria":"nordico",
+    "tipo":"objeto",
+    "condicion1":"delantera",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":14
+},
+{
+    
+    "id":14,
+    "puntos": 2,
+    "titulo":"Hela",
+    "categoria":"nordico",
+    "tipo":"dios",
+    "condicion1":"delantera",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":15
+},
+{
+    
+    "id":15,
+    "puntos": 2,
+    "titulo":"Asgard",
+    "categoria":"nordico",
+    "tipo":"lugar",
+    "condicion1":"lado",
+    "condicion2":"egipcio",
+    "condicion3":"",
+    "condicion4":"",
+    "img":16
+},
+{
+    
+    "id":16,
+    "puntos": 2,
+    "titulo":"Atenea",
+    "categoria":"griega",
+    "tipo":"dios",
+    "condicion1":"esquinas",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":17
+},
+{
+    
+    "id":17,
+    "puntos": 3,
+    "titulo":"Peluche",
+    "categoria":"griego",
+    "tipo":"objeto",
+    "condicion1":"enJuego",
+    "condicion2":"objeto",
+    "condicion3":5,
+    "condicion4":">=",
+    "img":18
+},
+{
+    
+    "id":18,
+    "puntos": 2,
+    "titulo":"Manzana",
+    "categoria":"griego",
+    "tipo":"objeto",
+    "condicion1":"lado",
+    "condicion2":"nordico",
+    "condicion3":"",
+    "condicion4":"",
+    "img":19
+},
+{
+    
+    "id":19,
+    "puntos": 2,
+    "titulo":"Hera",
+    "categoria":"griego",
+    "tipo":"dios",
+    "condicion1":"lado",
+    "condicion2":"egipcio",
+    "condicion3":"",
+    "condicion4":"",
+    "img":20
+},
+{
+    
+    "id":20,
+    "puntos": 2,
+    "titulo":"Puerto",
+    "categoria":"egipcio",
+    "tipo":"lugar",
+    "condicion1":"delantera",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":21
+},{
+    
+    "id":21,
+    "puntos": 2,
+    "titulo":"Esfinge",
+    "categoria":"egipcio",
+    "tipo":"objeto",
+    "condicion1":"esquinas",
+    "condicion2":"",
+    "condicion3":"",
+    "condicion4":"",
+    "img":22
+},{
+    
+    "id":22,
+    "puntos": 2,
+    "titulo":"Edredón",
+    "categoria":"nordico",
+    "tipo":"objeto",
+    "condicion1":"lado",
+    "condicion2":"griego",
+    "condicion3":"",
+    "condicion4":"",
+    "img":23
+},{
+    
+    "id":23,
+    "puntos": 3,
+    "titulo":"Jöyunheim",
+    "categoria":"nordico",
+    "tipo":"lugar",
+    "condicion1":"debajo",
+    "condicion2":"egipcio",
+    "condicion3":"",
+    "condicion4":"",
+    "img":24
+},{
+    
+    "id":24,
+    "puntos": 3,
+    "titulo":"Hades",
+    "categoria":"griego",
+    "tipo":"dios",
+    "condicion1":"unicoFila",
+    "condicion2":"dios",
+    "condicion3":"",
+    "condicion4":"",
+    "img":25
+}
+]
