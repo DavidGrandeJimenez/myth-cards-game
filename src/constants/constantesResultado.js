@@ -1,5 +1,4 @@
   //Constantes de arrays del resultado
-// constants.js
 const constantes = {
     filaTrasera: [8, 9, 10, 11],
     filaDelantera: [0, 1, 2, 3],

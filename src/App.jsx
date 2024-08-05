@@ -1,10 +1,12 @@
 //Imports
 import { useState, useEffect } from 'react'
-import cartasJSON from './datosCartas.json'
-import constantes from './constantesResultado.js'
 import Grid from '@mui/material/Grid';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
+
+import cartasJSON from './datosCartas.json'
+import constantes from './constants/constantesResultado.js'
+import {sxFotito, sxFotito2, letrasResultado} from './constants/constantesEstilos.js'
+import SimpleMediaQuery from './logic functions/SimpleMediaQuery.js'
 import {CartaV2} from './componenteCarta.jsx'
 
 //Componente principal
@@ -16,8 +18,8 @@ const App = () => {
   const [background, setBackground] = useState(Array(12).fill('Background'));
   const [imgEstado, setImgEstado] = useState(Array(12).fill(''));
   const [imgEstado2, setImgEstado2] = useState("");
-  const [acabado, setAcabado] = useState(false);
-  const [indexActual, setIndexActual] = useState()
+  const [isFinished, setIsFinished] = useState(false);
+  const [indexActual, setIndexActual] = useState(undefined)
   const [misCartasChulas, setMisCartasChulas] = useState(cartasRandom.slice(0, 12))
   const [puntosTotalesState, setPuntosTotalesState] = useState(0);
   const [claseGanar, setClaseGanar] = useState(Array(12).fill(''));
@@ -51,11 +53,6 @@ const App = () => {
     }
   }
 
-  //Función para controlar la obtención de puntos
-  const conseguirPuntuacion = (cada, index) => {
-    estadoActualGanar[index] = `Ganar`;
-    puntosTotales = puntosTotales + cada.puntos;
-  }
 
   //Componente del set de cartas (4x3)
   const set = misCartasChulas.map((cada, index) => {
@@ -90,6 +87,12 @@ const App = () => {
     setImgEstado(estadoActualImg);
     setImgEstado2(estadoActualImg[index]);
     setIndexActual(index);
+  }
+
+  //Función para controlar la obtención de puntos
+  const conseguirPuntuacion = (cada, index) => {
+    estadoActualGanar[index] = `Ganar`;
+    puntosTotales = puntosTotales + cada.puntos;
   }
 
   //Función para que puntúe la carta
@@ -214,7 +217,7 @@ const App = () => {
         puntuacion(cada, index);
       })
       setPuntosTotalesState(puntosTotales)
-      setAcabado(true);
+      setIsFinished(true);
       setClaseGanar(estadoActualGanar);
     }
 
@@ -250,7 +253,7 @@ const App = () => {
 
   //Componente de enseñar el texto del resultado o el botón de descarte
   const resultado = () => {
-    if (acabado) {
+    if (isFinished) {
       return <div className="letrasResultado">
         <Typography variant="body1" sx={letrasResultado}>
           El resultado es: {puntosTotalesState}
@@ -263,64 +266,9 @@ const App = () => {
     }
   }
 
-  //Constantes de los estilos de los Typography
-  const sxFotito = {
-    width:{xs: '90%', lg:'120%'},
-    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '2.7rem', lg: '2.3rem' },
-    fontFamily: 'Times New Roman, serif', 
-    fontStyle: 'italic',
-    fontWeight: 'bold',
-    marginTop: { xs: '-7vh', sm: '-10vh', md: '-2vh', lg: '-20vh' },
-    lineHeight: { xs: '5vh', sm: '6vh', md: '7vh', lg: '8vh' }
-  };
+ 
 
-  const sxFotito2 = {
-    fontSize: { xs: '1.4rem', sm: '1.8rem', md: '2.5rem', lg: '2.3rem' },
-    fontFamily: 'Times New Roman, serif',
-    fontStyle: 'italic',
-    fontWeight: 'bold',
-    marginTop: { xs: '12vh', sm: '10vh', md: '15vh', lg: '-20vh' },
-    lineHeight: { xs: '4vh', sm: '5vh', md: '5vh', lg: '8vh' }
-  };
-
-  const letrasResultado = {
-    fontSize: { xs: '1.2rem', sm: '2.8rem', md: '4rem', lg: '2.9rem' },
-    fontFamily: 'Times New Roman',
-    fontStyle: 'italic',
-    fontWeight: 'bold',
-    marginTop: { xs: '0vh', sm: '0vh', md: '0vh', lg: '0vh' },
-    lineHeight: { xs: '4vh', sm: '5vh', md: '5vh', lg: '8vh' }
-  };
-
-  //Controlar los estilos de la mayoría de los elementos renderizados
-  function SimpleMediaQuery(elemento) {
-    const matches = useMediaQuery('(max-width:1200px)');
-
-    if (matches) {
-      switch (elemento) {
-
-        case "set":
-          return { height: '60vh' }
-
-        case "gridBottom":
-          return { flexDirection: "row" };
-
-        case "zoom":
-          return { width: "220vw", height: "31vh", flexGrow:'2'}
-
-        case "card":
-          return { width: "10px" }
-
-        default:
-          return "";
-      }
-    } else {
-      if (elemento === "gridBottom") {
-        return { flexDirection: "column" };
-      }
-    }
-
-  }
+  
 
   //Return de la clase App. Envía todo el tablero.
   return (
