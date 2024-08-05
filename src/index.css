@@ -9,7 +9,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.cartaSet {
+.cartaSet, .cartaSet2{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -19,6 +19,12 @@ body {
   place-items: center;
   padding-right: 1vw;
 
+}.cartaSet{
+  z-index: 5;
+  position: absolute;;
+}.cartaSet2{
+  z-index: 1;
+  position: absolute;
 }
 
 .zoom {
@@ -57,7 +63,7 @@ body {
 
 .letrasResultado {
   border: 5px solid goldenrod;
-  margin-left:-10%;
+  margin-left: -10%;
   margin-top: 60%;
   width: 98%;
   height: 95%;
@@ -81,7 +87,12 @@ body {
   background: linear-gradient(127deg, blue, purple);
   color: transparent;
   border-radius: 5%;
+  z-index: 5;
 
+}
+
+.invisible {
+  opacity:0;
 }
 
 .CartaV2 {
@@ -323,6 +334,7 @@ body {
   border-radius: 10%;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 1;
 }
 
 .img25 {

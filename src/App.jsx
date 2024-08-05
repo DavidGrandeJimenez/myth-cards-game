@@ -5,9 +5,9 @@ import Typography from '@mui/material/Typography';
 
 import cartasJSON from './datosCartas.json'
 import constantes from './constants/constantesResultado.js'
-import {sxFotito, sxFotito2, letrasResultado} from './constants/constantesEstilos.js'
+import { sxFotito, sxFotito2, letrasResultado } from './constants/constantesEstilos.js'
 import SimpleMediaQuery from './logic functions/SimpleMediaQuery.js'
-import {CartaV2} from './componenteCarta.jsx'
+import { CartaV2 } from './componenteCarta.jsx'
 
 //Componente principal
 const App = () => {
@@ -53,14 +53,22 @@ const App = () => {
     }
   }
 
+  //Componente del set de cartas bocaArriba (4x3)
+  const setArriba = misCartasChulas.map((cada, index) => {
+    return (
+      <div className={`${claseGanar[index]} img${cada.img}`} key={index + 12} >
+        <CartaV2 id={cada.id} minWidth={minWidth} img={cada.img} />
+      </div>)
+  })
 
-  //Componente del set de cartas (4x3)
-  const set = misCartasChulas.map((cada, index) => {
+  //Componente del set de cartas bocaAbajo (4x3)
+  const setAbajo = misCartasChulas.map((cada, index) => {
     //Click -> Se cambia el estado de la carta a bocaArriba
     const handleClick = () => {
       let estadoActualBackground = [...background];
       if (estadoActualBackground[index] === "Background") {
-        estadoActualBackground[index] = `img${cada.img}`;
+        //estadoActualBackground[index] = `img${cada.img}`;
+        estadoActualBackground[index] = `img${cada.img} invisible`;
         setBackground(estadoActualBackground);
 
       }
@@ -266,25 +274,27 @@ const App = () => {
     }
   }
 
- 
 
-  
 
   //Return de la clase App. Envía todo el tablero.
   return (
     <Grid container spacing={0} justify="center" alignItems="center">
-      <Grid item xl={9} lg={9} md={12} sm={12} xs={12}>
+      <Grid item xl={9} lg={9} md={12} sm={12} xs={12} sx={{ position: 'relative', height: {lg:'95vh', md:'95vh', sm:'58vh', xs:'58vh' }}}>
 
         <div className='cartaSet' style={SimpleMediaQuery("set")}>
-          {set}
+          {setAbajo}
         </div>
+        <div className='cartaSet2' style={SimpleMediaQuery("set")}>
+          {setArriba}
+        </div>
+
       </Grid>
       <Grid item xl={3} lg={3} md={12} sm={12} xs={12} className={`zoom`} style={SimpleMediaQuery("gridBottom")}>
         <div className={`fotito ${imgEstado2}`} style={SimpleMediaQuery("zoom")}>
           <Typography variant="body1" sx={sxFotito}>
             Haz click de nuevo en una carta revelada para verla en formato grande
           </Typography></div>
-        <div className="fotito2" style={{flexGrow:'1'}}><Typography variant="body1" sx={sxFotito2}>
+        <div className="fotito2" style={{ flexGrow: '1' }}><Typography variant="body1" sx={sxFotito2}>
           {resultado()}
         </Typography></div>
       </Grid>
