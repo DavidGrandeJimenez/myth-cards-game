@@ -1,8 +1,9 @@
-# React + Vite
+Just enjoy the short version of the card game "DIOSES" from Pascu & Rodri about mythical characters and places from Egyptian, Greek and Nordic legends.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GOAL: Scoring as much points as you can.
 
-Currently, two official plugins are available:
+PLAYING: Just click a background-card to reveal it and doubble click on it for seeing it in "zoom" or big format. If you want, you can discard this card by clicking on the DISCARD bottom under the big format of the card revealed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+END: When all card are revealed, game ends and you'll get automatically the points you earned.
+
+TRY TO EARN THE HIGHER PUNTUATION!!

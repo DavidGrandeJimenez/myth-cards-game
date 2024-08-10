@@ -7,7 +7,13 @@ import cartasJSON from './datosCartas.json'
 import constantes from './constants/constantesResultado.js'
 import { sxFotito, sxFotito2, letrasResultado } from './constants/constantesEstilos.js'
 import SimpleMediaQuery from './logic functions/SimpleMediaQuery.js'
+import { useWidth } from './hooks/useWidth.js'
+
 import { CartaV2 } from './componenteCarta.jsx'
+
+// TODO: TEST UTILIZANDO PLAYWRIGHT
+//TODO: Quitar Background state
+
 
 //Componente principal
 const App = () => {
@@ -23,7 +29,8 @@ const App = () => {
   const [misCartasChulas, setMisCartasChulas] = useState(cartasRandom.slice(0, 12))
   const [puntosTotalesState, setPuntosTotalesState] = useState(0);
   const [claseGanar, setClaseGanar] = useState(Array(12).fill(''));
-  const [minWidth, setMinWidth] = useState({ minWidth: "130px" });
+
+  const { width } = useWidth();
 
   //Variables y constantes necesarias post-declaración de estados
   let puntosTotales = 0;
@@ -36,28 +43,11 @@ const App = () => {
     finPartida();
   }, [background]);
 
-  useEffect(() => { //Controlar tamaño de pantalla al inicio
-    cambiarMinWidth();
-  }, []);
-
-  //Función de controlar el tamaño de las cartas del set al inicio
-  const cambiarMinWidth = () => {
-    switch (true) {
-      case (window.innerWidth < 600):
-        setMinWidth({ minWidth: "75px" });
-        break;
-
-      case (window.innerWidth < 900 && window.innerWidth > 600):
-        setMinWidth({ minWidth: "125px" });
-        break;
-    }
-  }
-
   //Componente del set de cartas bocaArriba (4x3)
   const setArriba = misCartasChulas.map((cada, index) => {
     return (
       <div className={`${claseGanar[index]} img${cada.img}`} key={index + 12} >
-        <CartaV2 id={cada.id} minWidth={minWidth} img={cada.img} />
+        <CartaV2 id={cada.id} minWidth={width} img={cada.img} />
       </div>)
   })
 
@@ -82,7 +72,7 @@ const App = () => {
     } //Se devuelve el set
     return (
       <div className={`${claseGanar[index]}  ${background[index]}`} onClick={handleClick} key={index} >
-        <CartaV2 id={cada.id} minWidth={minWidth} img={cada.img} />
+        <CartaV2 id={cada.id} minWidth={width} img={cada.img} />
       </div>)
   });
 
@@ -279,7 +269,7 @@ const App = () => {
   //Return de la clase App. Envía todo el tablero.
   return (
     <Grid container spacing={0} justify="center" alignItems="center">
-      <Grid item xl={9} lg={9} md={12} sm={12} xs={12} sx={{ position: 'relative', height: {lg:'95vh', md:'95vh', sm:'58vh', xs:'58vh' }}}>
+      <Grid item xl={9} lg={9} md={12} sm={12} xs={12} sx={{ position: 'relative', height: { lg: '95vh', md: '95vh', sm: '58vh', xs: '58vh' } }}>
 
         <div className='cartaSet' style={SimpleMediaQuery("set")}>
           {setAbajo}
